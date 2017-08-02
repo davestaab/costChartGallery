@@ -1,37 +1,45 @@
 import d3 from 'd3';
 
-export default class Chart() {
+export default function costChart() {
 
-    constructor(){
-        this._width = 500;
-        this._height = 300;
-        this._xScale = d3.scale.linear();
+
+    let width = 500;
+    let height = 300;
+    let x = d3.scale.ordinal().rangeRoundPoints([0,width]);
+    let y = d3.scale.linear().range([height, 0]);
+    var area = d3.svg.area()
+        .x(function(d) { return x(d.date); })
+        .y0(function(d) { return y(d.y0); })
+        .y1(function(d) { return y(d.y0 + d.y); });
+    function chart(entry) {
+        debugger;
     }
 
-    render(entry) {
-
-    }
 
     // properties
-    get width() {
-        return this._width;
-    }
-    set width(width) {
-        this._width = width;
-    }
+    chart.width = function (_) {
+        if (!arguments.length) return width;
+        width = _;
+        return chart;
+    };
 
-    get height() {
-        return this._height;
-    }
-    set height(h) {
-        this._height = h;
-    }
+    chart.height = function (_) {
+        if (!arguments.length) return height;
+        height = _;
+        return chart;
+    };
 
-    get xScale() {
-        return this._xScale;
-    }
-    set xScale(x) {
-        this._xScale = x;
-    }
+    chart.x = function (_) {
+        if (!arguments.length) return x;
+        x = _;
+        return chart;
+    };
 
+    chart.y = function (_) {
+        if (!arguments.length) return y;
+        y = _;
+        return chart;
+    };
+
+    return chart;
 }

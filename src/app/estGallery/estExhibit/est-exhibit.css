@@ -1,0 +1,30 @@
+.est-exhibit {
+    display: block;
+}
+
+.est-exhibit__container {
+    display: flex;
+    /*flex: 1 0 200px;
+    margin: 20px;
+    background-color: lightgrey;
+    min-height: 200px;*/
+}
+
+.est-exhibit__description {
+    flex: 1 0 0%;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #DDDDDD;
+    background-color: #EEEEEE;
+}
+
+.est-exhibit__display {
+
+    flex: 2 0 0%;
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #EEEEEE;
+    align-items: center;
+    justify-content: center;
+}
