@@ -9,6 +9,7 @@ class estCostDataLoader {
         // this.data = undefined;
     }
     $onInit() {
+        let ctrl = this;
         d3.csv(this.datasetFile, (data) => {
 
             console.log('data', data);
@@ -28,8 +29,8 @@ class estCostDataLoader {
             console.log('stackData', stackData);
             //
             let stack = d3.layout.stack().values((d) => d.values);
-            this.myData = stack(stackData);
-            console.log('series', this.myData);
+            ctrl.myData = stack(stackData);
+            console.log('series', ctrl.myData);
         });
     }
 

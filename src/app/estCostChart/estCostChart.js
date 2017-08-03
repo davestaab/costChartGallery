@@ -34,7 +34,7 @@ class estCostChart {
 
 export default function (module) {
     module.component('estCostChart', {
-        template: template,
+        // template: template,
         controller: estCostChart,
         bindings: {
             myData: '<'

@@ -1,7 +1,8 @@
 <est-cost-chart
     class="est-cost-chart"
-    my-data="$ctrl.dataSet"
+    my-data="$ctrl.myData"
     >
 </est-cost-chart>
-<div ng-bind="$ctrl.myData.length">
+<div>
+    {{$ctrl.myData | json}}
 </div>
