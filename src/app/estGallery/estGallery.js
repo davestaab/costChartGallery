@@ -5,7 +5,9 @@ class estGallery {
     constructor() {
         "ngInject";
     }
-
+    $onInit() {
+        this.test = "hello world";
+    }
 
 }
 

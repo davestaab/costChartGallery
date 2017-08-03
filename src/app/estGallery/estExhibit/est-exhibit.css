@@ -30,3 +30,10 @@
     align-items: center;
     justify-content: center;
 }
+
+exhibit-display {
+    display: block;
+}
+exhibit-title {
+    display: block;
+}

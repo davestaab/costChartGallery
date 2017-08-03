@@ -5,7 +5,6 @@
   <title>Estimator Cost Chart Gallery</title>
   <!-- <link rel="icon" type="image/x-icon" href="/img/favicon.ico"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <base href="/">
 </head>
 <body>
@@ -18,10 +17,13 @@
                 </p>
             </exhibit-description>
             <exhibit-display>
-                chart...
+                <est-cost-data-loader
+                    class="est-cost-data-loader"
+                    dataset-file="'data/cost-2016.csv'"
+                ></est-cost-data-loader>
             </exhibit-display>
         </est-exhibit>
-        <est-exhibit class="est-exhibit est-exhibit--rtl">
+        <!-- <est-exhibit class="est-exhibit est-exhibit--rtl">
             <exhibit-description>
                 <h1>Multi year estimate</h1>
                 <p>
@@ -53,7 +55,7 @@
             <exhibit-display>
                 chart...
             </exhibit-display>
-        </est-exhibit>
+        </est-exhibit> -->
     </est-gallery>
 </body>
 </html>
