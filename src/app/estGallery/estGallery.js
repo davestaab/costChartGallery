@@ -14,5 +14,8 @@ export default function (module) {
         template: template,
         controller: estGallery,
         transclude: true,
+        bindings: {
+            title: '<'
+        }
     });
 }

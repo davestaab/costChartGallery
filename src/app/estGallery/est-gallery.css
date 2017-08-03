@@ -6,10 +6,6 @@
     flex-direction: column;
 }
 
-/*.est-gallery__exhibit {
-    flex: 1 0 200px;
-    margin: 20px;
-    background-color: lightgrey;
-    max-width: 200px;
-    height: 200px;
-}*/
+.est-gallery__title {
+    text-align: center;
+}

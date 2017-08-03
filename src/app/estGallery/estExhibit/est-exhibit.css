@@ -1,6 +1,12 @@
 .est-exhibit {
     display: block;
 }
+.est-exhibit--rtl .est-exhibit__container{
+    order: 0
+}
+.est-exhibit--rtl .est-exhibit__description{
+    order: 1
+}
 
 .est-exhibit__container {
     display: flex;
