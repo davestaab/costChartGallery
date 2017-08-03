@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="app" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Estimator Cost Chart Gallery</title>
+  <!-- <link rel="icon" type="image/x-icon" href="/img/favicon.ico"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+<link href="/css/app.css" rel="stylesheet"></head>
+<body>
+    <est-gallery class="est-gallery" title="'Estimator Cost Chart'">
+        <est-exhibit class="est-exhibit">
+            <exhibit-description>
+                <h1>One year estimate</h1>
+                <p>
+                    Basic data set covering 1 year
+                </p>
+            </exhibit-description>
+            <exhibit-display>
+                <est-cost-data-loader
+                    class="est-cost-data-loader"
+                    dataset-file="'data/cost-2016.csv'"
+                ></est-cost-data-loader>
+            </exhibit-display>
+        </est-exhibit>
+        <!-- <est-exhibit class="est-exhibit est-exhibit--rtl">
+            <exhibit-description>
+                <h1>Multi year estimate</h1>
+                <p>
+                    Basic data set covering several years
+                </p>
+            </exhibit-description>
+            <exhibit-display>
+                chart...
+            </exhibit-display>
+        </est-exhibit>
+        <est-exhibit class="est-exhibit">
+            <exhibit-description>
+                <h1>Loading Data</h1>
+                <p>
+                    No data yet, in the loading state
+                </p>
+            </exhibit-description>
+            <exhibit-display>
+                chart...
+            </exhibit-display>
+        </est-exhibit>
+        <est-exhibit class="est-exhibit est-exhibit--rtl">
+            <exhibit-description>
+                <h1>Transition</h1>
+                <p>
+                    Transition between data sets
+                </p>
+            </exhibit-description>
+            <exhibit-display>
+                chart...
+            </exhibit-display>
+        </est-exhibit> -->
+    </est-gallery>
+<script type="text/javascript" src="/app.9b6042bc8441e0d03df4.js"></script></body>
+</html>
