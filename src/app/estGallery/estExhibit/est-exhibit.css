@@ -10,10 +10,6 @@
 
 .est-exhibit__container {
     display: flex;
-    /*flex: 1 0 200px;
-    margin: 20px;
-    background-color: lightgrey;
-    min-height: 200px;*/
 }
 
 .est-exhibit__description {
