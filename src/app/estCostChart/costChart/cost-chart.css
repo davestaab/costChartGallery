@@ -1,0 +1,21 @@
+.area {
+    stroke: white;
+}
+.area--labor {
+    fill: #AAD6E1;
+}
+.area--subcontracts {
+    fill: #838E91;
+}
+
+.area--materials {
+    fill: #ECBC98;
+}
+
+.area--travel_odc {
+    fill: #B5EA8A;
+}
+
+.area--internal {
+    fill: #C4BED9;
+}

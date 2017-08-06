@@ -3,8 +3,8 @@ import d3 from 'd3';
 export default function costChart() {
 
 
-    let width = 500;
-    let height = 300;
+    let width = 480;
+    let height = 280;
     let x = d3.scale.ordinal().rangeRoundPoints([0,width]);
     let y = d3.scale.linear().range([height, 0]);
     var area = d3.svg.area()
@@ -12,7 +12,21 @@ export default function costChart() {
         .y0(function(d) { return y(d.y0); })
         .y1(function(d) { return y(d.y0 + d.y); });
     function chart(entry) {
-        debugger;
+        const selection = entry
+            .selectAll('.area')
+            .data(d => d);
+
+        selection.enter()
+            .append('path')
+            .attr('class', (d) => {
+                return 'area area--' + d.name.toLowerCase();
+            })
+            .attr('d', (d, i) => {
+                // debugger;
+                console.log('d.values: ', i, d.values);
+                return area(d.values);
+            })
+            ;
     }
 
 

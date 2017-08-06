@@ -2,8 +2,9 @@ import template from './estCostChart.tpl.html';
 import style from './estCostChart.css';
 import d3 from 'd3';
 import costChart from './costChart/costChart';
+import costChartStyle from './costChart/cost-chart.css';
 import { translate } from './utils';
-
+import { flatMap } from 'lodash';
 
 class estCostChart {
     constructor($element) {
@@ -13,7 +14,7 @@ class estCostChart {
     }
 
     $onInit() {
-        d3.select(this.element[0])
+        this.selection = d3.select(this.element[0])
             .append('svg')
             .attr('width', 500)
             .attr('height', 300)
@@ -25,10 +26,22 @@ class estCostChart {
     }
 
     $onChanges(changes) {
-        console.log('cost chart changes', changes);
-        if(changes.chartData){
-            console.log('chart data changes');
+        if(changes.chartData && changes.chartData.currentValue){
+            this.updateChart(this.chartData);
         }
+    }
+
+    updateChart(data){
+        // debugger;
+        const xDomain = data[0].values.map((d) => d.date)
+        this.chart.x().domain(xDomain);
+        const yDomain = d3.extent(flatMap(data, (d) => {
+            return d3.extent(d.values.map((dd) => {
+                return dd.y + dd.y0;
+            }));
+        }));
+        this.chart.y().domain(yDomain);
+        this.selection.datum(data).call(this.chart);
     }
 }
 
@@ -37,7 +50,7 @@ export default function (module) {
         // template: template,
         controller: estCostChart,
         bindings: {
-            myData: '<'
+            chartData: '<'
         }
     });
 }

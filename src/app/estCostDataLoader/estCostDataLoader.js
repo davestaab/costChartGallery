@@ -2,35 +2,39 @@ import template from './estCostDataLoader.tpl.html';
 import style from './est-cost-data-loader.css';
 
 import d3 from 'd3';
+import angular from 'angular';
 
 class estCostDataLoader {
-    constructor() {
+
+    constructor($timeout) {
         "ngInject";
-        // this.data = undefined;
+        this.$timeout = $timeout;
     }
+
     $onInit() {
-        let ctrl = this;
         d3.csv(this.datasetFile, (data) => {
+            this.$timeout(() => {
+                console.log('data', data);
+                const categories = ["Labor","Subcontracts","Materials","Travel_ODC","Internal"];
 
-            console.log('data', data);
-            const categories = ["Labor","Subcontracts","Materials","Travel_ODC","Internal"];
-
-            const stackData = categories.map((cat) => {
-                return {
-                    name: cat,
-                    values: data.map((d) => {
-                        return {
-                            date: d.date,
-                            y: d[cat]
-                        };
-                    })
-                };
+                const stackData = categories.map((cat) => {
+                    return {
+                        name: cat,
+                        values: data.map((d) => {
+                            return {
+                                date: d.date,
+                                y: Number(d[cat])
+                            };
+                        })
+                    };
+                });
+                console.log('stackData', stackData);
+                //
+                let stack = d3.layout.stack().values((d) => d.values);
+                let stacked = stack(stackData);
+                console.log('series', stacked);
+                this.theData = stacked;
             });
-            console.log('stackData', stackData);
-            //
-            let stack = d3.layout.stack().values((d) => d.values);
-            ctrl.myData = stack(stackData);
-            console.log('series', ctrl.myData);
         });
     }
 
