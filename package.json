@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/preboot/angularjs-webpack",
   "dependencies": {
-    "angular": "^1.5.0",
-    "d3": "3.5.5"
+    "angular": "1.5",
+    "d3": "3.5.5",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
