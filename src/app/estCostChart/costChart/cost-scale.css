@@ -1,0 +1,35 @@
+.cost-scale__range {
+
+}
+.cost-scale__axis .domain {
+    fill: transparent;
+    /*stroke: black;*/
+}
+.cost-scale__axis text {
+    text-anchor: start;
+    fill: #072C3C;
+    font-weight: 500;
+
+}
+.cost-scale__axis .tick line {
+    stroke: #072C3C;
+}
+
+.cost-scale__range--past {
+    fill: url(#pastGradient);
+}
+
+.cost-scale__range--present {
+    fill: #E3EEF2;
+}
+
+.cost-scale__range--future {
+    fill: url(#futureGradient);
+}
+
+.cost-scale__stop-one {
+    stop-color: #D1E0E5;
+}
+.cost-scale__stop-two {
+    stop-color: #A7BFC5;
+}

@@ -6,6 +6,7 @@ import estCostChart from './estCostChart/estCostChart';
 import estGallery from './estGallery/estGallery';
 import estExhibit from './estGallery/estExhibit/estExhibit';
 import estCostDataLoader from './estCostDataLoader/estCostDataLoader.js';
+import estCostLegend from './estCostLegend/estCostLegend';
 
 const MODULE_NAME = 'app';
 
@@ -14,5 +15,6 @@ estCostChart(module);
 estGallery(module);
 estExhibit(module);
 estCostDataLoader(module);
+estCostLegend(module);
 
 export default MODULE_NAME;
